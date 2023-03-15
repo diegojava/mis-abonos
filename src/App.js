@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       <Menu />
-      <header className="App-content">
-      </header>
+      <section className="App-content">
+      </section>
     </div>
   );
 }
