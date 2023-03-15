@@ -1,11 +1,11 @@
-import { Container, Navbar } from 'react-bootstrap'
+import { Container, Nav, Navbar } from 'react-bootstrap'
 import logo from '../logo.png'
 
 
 export default function Menu() {
   return (
     <Navbar variant="dark" className='bg-menu'>
-        <Container className='bg-menu'>
+      <Container className='bg-menu'>
           <Navbar.Brand href="#home">
             <img
               alt=""
@@ -15,7 +15,17 @@ export default function Menu() {
               className="d-inline-block align-top"
             />
           </Navbar.Brand>
-        </Container>
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+            <Nav.Link href="#">Home</Nav.Link>
+            <Nav.Link href="#">Link</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   )
 }
