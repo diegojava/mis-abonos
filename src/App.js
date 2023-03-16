@@ -18,8 +18,8 @@ function App() {
     <div className="App">
       <Menu />
       <section className="App-content">
-        <Route path='./home' component={ListOfCards} />
-        <Route path='./add-new' component={NewPaymentModal} />
+        <Route path='/home' component={ListOfCards} />
+        <Route path='/add-new' component={NewPaymentModal} />
       </section>
     </div>
   );
