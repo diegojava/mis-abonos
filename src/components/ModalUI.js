@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Table } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
@@ -12,6 +13,14 @@ export default function ModalUI(params) {
   const typeValue = {
     'Ingreso': 1,
     'Egreso': 2
+  }
+
+  const sumAmounts = (payments) => {
+    let sum = 0
+    payments.map(payment => {
+      sum = sum + payment.amount
+    })
+    return sum
   }
 
   return (
@@ -57,6 +66,36 @@ export default function ModalUI(params) {
               <Button>Ok</Button>
             </Form.Group>
             Abonos...
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Descripcion</th>
+                  <th>Cantidad</th>
+                </tr>
+              </thead>
+              <tbody>
+              {
+                params.payments.map((payment, index) => {
+                  return (
+                    <tr>
+                      <td>{index + 1}</td>
+                      <td>{payment.description}</td>
+                      <td>{payment.amount}</td>
+                    </tr>
+                  )
+                })
+              }
+              <tr>
+                <td colSpan={2}>Total</td>
+                <td colSpan={1}>{sumAmounts(params.payments)}</td>
+              </tr>
+              <tr>
+                <td colSpan={2}>Resta/Falta</td>
+                <td colSpan={1}>{params.amount - sumAmounts(params.payments)}</td>
+              </tr>
+              </tbody>
+            </Table>
           </Form>
         </Modal.Body>
         <Modal.Footer>

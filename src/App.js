@@ -1,10 +1,8 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 import Menu from './components/Menu';
 import ListOfCards from './components/ListOfCards';
-import ModalUI from './components/ModalUI';
 
 
 function App() {

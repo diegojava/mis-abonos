@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ModalUI from './ModalUI';
 
@@ -16,7 +14,7 @@ export default function CardUI (params) {
         <Card.Footer>
           Contacto: {params.contact}
         </Card.Footer>
-        <ModalUI title={params.title} description={params.description} amount={params.amount} type={params.type} />
+        <ModalUI title={params.title} description={params.description} amount={params.amount} type={params.type} payments={params.payments} />
       </Card.Body>
     </Card>
   );
