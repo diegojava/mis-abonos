@@ -1,12 +1,13 @@
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import logo from '../logo.png'
+import ModalUI from './ModalUI'
 
 
 export default function Menu() {
   return (
     <Navbar variant="dark" className='bg-menu'>
       <Container className='bg-menu'>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img
               alt=""
               src={logo}
@@ -21,8 +22,8 @@ export default function Menu() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#">Link</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/add-new">Añadir abono</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
